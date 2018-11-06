@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+          crossorigin="anonymous">
+    <title>Edit Flight</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Edit flight</h1>
+        </div>
+        <div class="container">
+            <form action="#" th:action="@{/admin/edit_form}" th:object="${flight}"
+                  method="post">
+                <input type="hidden" th:field="*{flightId}" />
+
+                <div class="form-group row">
+                    <label for="airplaneType" class="col-sm-2 col-form-label">Airplane Type</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               th:field="*{airplaneType}"
+                               name="airplaneType" class="form-control" id="airplaneType" placeholder="Airplane Type"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="departureCity" class="col-sm-2 col-form-label">Departure City</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               th:field="*{departureCity}"
+                               name="departureCity" class="form-control" id="departureCity" placeholder="Departure City"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="departureDateTime" class="col-sm-2 col-form-label">Departure Date and Time</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               th:field="*{departureDateTime}"
+                               name="departureDateTime" class="form-control" id="departureDateTime" placeholder="Departure Date and Time"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="arrivalCity" class="col-sm-2 col-form-label">Arrival City</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               th:field="*{arrivalCity}"
+                               name="arrivalCity" class="form-control" id="arrivalCity" placeholder="Arrival City"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="arrivalDateTime" class="col-sm-2 col-form-label">Arrival Date and Time</label>
+                    <div class="col-sm-10">
+                        <input type="text"
+                               th:field="*{arrivalDateTime}"
+                               name="arrivalDateTime" class="form-control" id="arrivalDateTime" placeholder="Arrival Date and Time"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <a th:href="@{/admin/manageflights}" class="btn btn-default" role="button">
+                            <span aria-hidden="true"></span>Back
+                        </a>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+</body>
+</html>
